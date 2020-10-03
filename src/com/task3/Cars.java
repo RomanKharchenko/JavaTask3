@@ -1,7 +1,5 @@
 package com.task3;
 
-public class Cars {
-    package com.task3;
 
     public class Cars {
         private int id;
@@ -82,4 +80,4 @@ public class Cars {
         }
     }
 
-}
+
