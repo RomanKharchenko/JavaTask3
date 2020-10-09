@@ -1,44 +1,36 @@
-package com.task3;
+package com.list;
+import java.util.List;
 import java.util.ArrayList;
-
 public class CarsMethods {
-    public static ArrayList<Cars> (Cars[] cars, String brend)
-    {
-        ArrayList<Cars> brendcars = new ArrayList<Car>()
-        for (int i = 0; i<cars.length; i++)
-        {
-            if (cars[i].getBrend() == brend)
-            {
-                brendcars.add(cars[i])
+    public static List<Cars> carsBrendEqual(List<Cars> cars, String brend) {
+        List<Cars> result = new ArrayList<Cars>();
+        for (Cars car : cars) {
+            if (car.getBrend().equalsIgnoreCase(brend)) {
+                result.add(car);
             }
         }
-        return brendcars
-
+        return result;
     }
-    public static void ArrayList<Cars> (Cars[] cars, String model, int years)
-    {
+
+    public static List<Cars> carsModelExpluatation(List<Cars> cars, String model, int years) {
         java.util.Calendar calendar = java.util.Calendar.getInstance(java.util.TimeZone.getDefault(), java.util.Locale.getDefault());
         int year = calendar.get(java.util.Calendar.YEAR);
-        ArrayList<Cars> yearcars = new ArrayList<Car>()
-        for (int i = 0; i<cars.length; i++)
-        {
-            if (cars[i].getModel() == "седан" && year - cars[i].getYear() == years )
-            {
-                yearcars.add(cars[i])
+        ArrayList<Cars> yearCars = new ArrayList<Cars>();
+        for (Cars car : cars) {
+            if (car.getModel() == "седан" && year - car.getYear() > years) {
+                yearCars.add(car);
             }
         }
-        return yearcars
+        return yearCars;
     }
-    public static void ArrayList<Cars> (Cars[] cars, int year, int price)
-    {
-        ArrayList<Cars> yearpricecars = new ArrayList<Car>()
-        for (int i = 0; i<cars.length; i++)
-        {
-            if (cars[i].getYear() == year && cars[i].getPrice() > price )
-            {
-                yearpricecars.add(cars[i])
+
+    public static List<Cars> carsYearPrice(List<Cars> cars, int year, int price) {
+        ArrayList<Cars> yearPriceCars = new ArrayList<Cars>();
+        for (Cars car : cars) {
+            if (car.getYear() == year && car.getPrice() > price) {
+                yearPriceCars.add(car);
             }
         }
-        return yearpricecars
+        return yearPriceCars;
     }
 }
